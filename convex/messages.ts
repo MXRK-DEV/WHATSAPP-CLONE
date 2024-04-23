@@ -88,7 +88,7 @@ export const getMessages = query({
 			throw new Error("Unauthorized");
 		}
 
-		const messages = await ctx.db
+		const messages = await ctx.db 
 			.query("messages")
 			.withIndex("by_conversation", (q) => q.eq("conversation", args.conversation))
 			.collect();
